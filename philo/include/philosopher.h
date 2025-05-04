@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:34:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/04 14:02:04 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/04 14:55:53 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,10 @@ int     is_valid_arg(char **av);
 
 /* Initialisation */
 void    init_input(t_philo  *philo, char **av);
+void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, char **av);
+void    init_fork(pthread_mutex_t *forks, int nb_philos);
+void    init_program(t_program *program, t_philo *philos);
+
 
 /* Fonctions utiles */
 int     ft_atoi(char *str);
