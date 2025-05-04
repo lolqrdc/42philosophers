@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:49:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/04 14:55:42 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/04 15:02:23 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, 
         philos[i].eating = 0;
         philos[i].meals_eaten = 0;
         init_input(&philos[i], av);
-        philos[i].start_time = current_timing();
-        philos[i].last_meal = current_timing();
+        philos[i].start_time = current_time();
+        philos[i].last_meal = current_time();
         philos[i].write_lock = &program->write_lock;
         philos[i].dead_lock = &program->dead_flag;
         philos[i].meal_lock = &program->meal_lock;

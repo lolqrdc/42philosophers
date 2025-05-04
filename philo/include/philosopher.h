@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:34:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/04 14:55:53 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/04 15:04:48 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,6 @@ void    init_program(t_program *program, t_philo *philos);
 
 /* Fonctions utiles */
 int     ft_atoi(char *str);
+size_t  current_time(void);
 
 #endif
