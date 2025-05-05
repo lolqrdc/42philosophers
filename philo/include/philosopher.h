@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:34:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/04 15:04:48 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 10:37:58 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ typedef struct s_program
     
 }  t_program;
 
-/* Execution */
+/* Execution du programme */
 int     main (int argc, char **av);
 
 /* Parsing */
@@ -67,6 +67,8 @@ void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, 
 void    init_fork(pthread_mutex_t *forks, int nb_philos);
 void    init_program(t_program *program, t_philo *philos);
 
+/* La routine */
+int thread_create(t_program *program, pthread_mutex_t *forks);
 
 /* Fonctions utiles */
 int     ft_atoi(char *str);

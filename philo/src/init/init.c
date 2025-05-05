@@ -6,13 +6,16 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 13:49:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/04 15:02:23 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 10:21:46 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
 
-/* Initialisation des inputs proposé par l'utilisateur. */
+/* @brief Initialisation des inputs proposé par l'utilisateur, initialisation
+de la structure philo en entier, initialisation des mutex pour les fourchettes 
+et initialisation des mutex du programme. */
+
 void    init_input(t_philo  *philo, char **av)
 {
     philo->nb_philos = ft_atoi(av[1]);
@@ -25,7 +28,6 @@ void    init_input(t_philo  *philo, char **av)
         philo->nb_time_to_eat = -1;
 }
 
-/* Initisalition de la structure philo en entier. */
 void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, char **av)
 {
     int i;
@@ -52,7 +54,6 @@ void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, 
     }
 }
 
-/* Initialisation des mutex pour les fourchettes. */
 void    init_fork(pthread_mutex_t *forks, int nb_philos)
 {
     int i;
@@ -65,7 +66,6 @@ void    init_fork(pthread_mutex_t *forks, int nb_philos)
     }
 }
 
-/* Initialisation des mutex du programme. */
 void    init_program(t_program *program, t_philo *philos)
 {
     program->dead_flag = 0;
@@ -73,5 +73,4 @@ void    init_program(t_program *program, t_philo *philos)
     pthread_mutex_init(&program->write_lock, NULL);
     pthread_mutex_init(&program->meal_lock, NULL);
     pthread_mutex_init(&program->dead_lock, NULL);
-
 }

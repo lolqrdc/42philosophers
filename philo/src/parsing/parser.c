@@ -6,11 +6,14 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 17:11:32 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/02 13:30:55 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 10:25:39 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
+
+/* @brief Vérification des arguments passés par l'utilisateur, si l'argument
+n'est pas valide, un message d'erreur doit s'afficher. */
 
 int is_valid_arg(char **av)
 {
