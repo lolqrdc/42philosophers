@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/04 15:10:10 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/05 16:23:18 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 16:48:37 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,14 @@ que 'dead_flag' est a 1. */
 void    philo_routine(void *arg)
 {
     t_philo *philo;
-    int i = 0;
-    philo= (t_philo *)arg;
+    philo = (t_philo *)arg;
     if (philo->id % 2 == 0)
         ft_usleep(1);
-    while (!is_dead(philo) && i < 5)
+    while (!is_dead(philo))
     {
         eating(philo);
         sleeping(philo);
         thinking(philo);
-        i++;
     }
     return (arg);
 }
