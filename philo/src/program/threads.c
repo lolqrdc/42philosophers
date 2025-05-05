@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_threads.c                                   :+:      :+:    :+:   */
+/*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 10:31:43 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/05 14:06:20 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 16:40:58 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
 
-/* @brief */
+/* @brief  Création d'autant de threads qu'il y a de philosophes et création
+d'un thread supplémentaire, qui est le surveillant (monitor). Ensuite, les 
+threads sont join. */
 
 int thread_create(t_program *program, pthread_mutex_t *forks)
 {
