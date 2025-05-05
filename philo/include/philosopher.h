@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:34:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/05 10:37:58 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 14:54:39 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,20 @@ void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, 
 void    init_fork(pthread_mutex_t *forks, int nb_philos);
 void    init_program(t_program *program, t_philo *philos);
 
+/* Thread */
+int     thread_create(t_program *program, pthread_mutex_t *forks);
+
 /* La routine */
-int thread_create(t_program *program, pthread_mutex_t *forks);
+void    philo_routine(void *arg);
+void    thinking(t_philo *philo);
+void    sleeping(t_philo *philo);
+void    eating(t_philo *philo);
+int     is_dead(t_philo);
 
 /* Fonctions utiles */
 int     ft_atoi(char *str);
 size_t  current_time(void);
+int     ft_usleep(size_t milliseconds);
+void    print_action(char *msg, t_philo *philo, int id);
 
 #endif
