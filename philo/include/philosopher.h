@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/29 13:34:38 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/05 14:54:39 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/05 16:33:47 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void    init_program(t_program *program, t_philo *philos);
 
 /* Thread */
 int     thread_create(t_program *program, pthread_mutex_t *forks);
+void    destroy_mutex(t_program *program, pthread_mutex_t *fork);
 
 /* La routine */
 void    philo_routine(void *arg);
