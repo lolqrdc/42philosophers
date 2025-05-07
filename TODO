@@ -1,6 +1,0 @@
-PHILOSOPHERS:
-    ✔ Parsing des arguments. @done(25-05-05 14:09)
-    ✔ Initialisation de mes structures. @done(25-05-05 14:09)
-    ✔ Création des threads, pour chaque philosophe + un thread monitor. @done(25-05-05 14:09)
-    ☐ Ecrire la routine du philosophe.
-    ☐ Ecrire la routine du monitor.
