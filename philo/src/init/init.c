@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 14:22:52 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 16:06:40 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 18:18:41 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void    init_philos(t_philo *philo, t_program *program, pthread_mutex_t *fork, c
         philo[i].eating = 0;
         philo[i].meals_eaten = 0;
         init_input(&philo[i], av);
-        //philo[i].start_time =
-        //philo[i].last_meal = 
+        philo[i].start_time = current_time();
+        philo[i].last_meal = current_time();
         philo[i].write_lock = &program->write_lock;
         philo[i].dead_lock = &program->dead_lock;
         philo[i].meal_lock = &program->meal_lock;
@@ -53,23 +53,29 @@ void    init_philos(t_philo *philo, t_program *program, pthread_mutex_t *fork, c
     }
 }
 
-void init_program(t_program *program, t_philo *philos)
+int init_program(t_program *program, t_philo *philos)
 {
     program->dead_flag = 0;
     program->philos = philos;
-    pthread_mutex_init(&program->write_lock, NULL);
-    pthread_mutex_init(&program->meal_lock, NULL);
-    pthread_mutex_init(&program->dead_lock, NULL);
+    if (pthread_mutex_init(&program->write_lock, NULL) != 0)
+        return (FAIL);
+    if (pthread_mutex_init(&program->meal_lock, NULL) != 0)
+        return (FAIL);
+    if (pthread_mutex_init(&program->dead_lock, NULL) != 0)
+        return (FAIL);
+    return (SUCCESS);
 }
 
-void    init_fork(pthread_mutex_t *forks, int nb_philos)
+int    init_fork(pthread_mutex_t *forks, int nb_philos)
 {
     int i;
 
     i = 0;
     while (i < nb_philos)
     {
-        pthread_mutex_init(&forks[i], NULL);
+        if (pthread_mutex_init(&forks[i], NULL) != 0)
+            return (FAIL);
         i++;
     }
+    return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:03:21 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 16:07:24 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 18:23:24 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,23 @@ int main (int argc, char **av)
     pthread_mutex_t forks[PHILO_MAX];
 
     if (argc != 5 && argc != 6)
-        return (printf("Please provide enough arguments.\n"), FAIL);
+        return (printf("Please provide valid arguments.\n"), FAIL);
     if (valid_arg(av) != SUCCESS)
         return (FAIL);
-    init_program(&program, philos);
-    init_fork(forks, ft_atoi(av[1]));
+    if (init_fork(forks, ft_atoi(av[1])) != SUCCESS)
+        return(printf("Error while the initialization of the program"), 1);
+    if (init_program(&program, philos) != SUCCESS)
+    {
+        destroy_mutex(&program, forks);
+        return (printf("Error while the Initialization of forks mutexes"), 1);
+    }
     init_philos(philos, &program, fork, av);
+    if (philos->nb_philos == 1)
+        one_philo(philos);
+    else
+    {
+        create_thread(&program, forks);
+        destroy_mutex(&program, forks);
+    }
     return (SUCCESS);
 }
-
