@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:12:16 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 16:02:43 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 18:19:00 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,18 +67,31 @@ int     valid_arg(char **av);
 /* Initialisation */
 void    init_input(t_philo *philo, char **av);
 void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, char **av);
-void    init_program(t_program *program, t_philo *philos);
-void    init_fork(pthread_mutex_t *forks, int nb_philos);
+int     init_program(t_program *program, t_philo *philos);
+int     init_fork(pthread_mutex_t *forks, int nb_philos);
 
 /* Gestion des threads */
+int     create_thread(t_program *program, pthread_mutex_t *forks);
+void    destroy_mutex(t_program *program, pthread_mutex_t *forks);
 
 /* La routine des philosophers */
+void    p_routine(void *arg);
+void    p_eating(t_philo *philo);
+void    p_sleeping(t_philo *philo);
+void    p_thinking(t_philo *philo);
+int     is_philo_dead(t_philo *philo);
 
 /* La routine du monitor */
 
 /* Les fonctions utilitaires */
 int	    ft_atoi(char *str);
 int	    ft_is_digit(int n);
+size_t  current_time(void);
+int     ft_usleep(size_t milliseconds);
+void    print_message(char *str, t_philo *philo, int id);
+
+/* Cas particulier */
+void    one_philo(t_philo *philo);
 
 // ========= DEBUG ========= //
 void debug_philo(const t_philo *philo);

@@ -8,11 +8,15 @@ CFLAGS = -Wall -Wextra -I$(INC_DIR) -g -pthread
 RM = rm -f
 
 SRCS = \
-    philo/src/parsing/parser.c \
-    philo/src/parsing/utils.c \
     philo/src/main.c \
+    philo/src/parsing/parser.c \
 	philo/src/init/init.c \
+	philo/src/run/threads.c \
+	philo/src/run/philo_routine.c \
+	philo/src/run/spy_routine.c \
 	philo/src/debug.c \
+    philo/src/utils/for_arg.c \
+	philo/src/utils/gettime.c \
 
 OBJS = $(SRCS:philo/%.c=$(OBJ_DIR)%.o)
 
