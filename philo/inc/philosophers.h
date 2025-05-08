@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:12:16 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 12:24:10 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 16:02:43 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,16 @@ typedef struct s_program
 }  t_program;
 
 /* Exécution du programme */
-int main (int argc, char **av);
+int     main(int argc, char **av);
 
 /* Parsing */
-int valid_arg(char **av);
+int     valid_arg(char **av);
 
 /* Initialisation */
+void    init_input(t_philo *philo, char **av);
+void    init_philos(t_philo *philos, t_program *program, pthread_mutex_t *fork, char **av);
+void    init_program(t_program *program, t_philo *philos);
+void    init_fork(pthread_mutex_t *forks, int nb_philos);
 
 /* Gestion des threads */
 
@@ -73,8 +77,13 @@ int valid_arg(char **av);
 /* La routine du monitor */
 
 /* Les fonctions utilitaires */
-int	ft_atoi(char *str);
-int	ft_is_digit(int n);
+int	    ft_atoi(char *str);
+int	    ft_is_digit(int n);
 
+// ========= DEBUG ========= //
+void debug_philo(const t_philo *philo);
+void debug_all_philos(const t_philo *philos, int nb);
+void debug_program(const t_program *program);
+void debug_forks(pthread_mutex_t *forks, int nb);
 
 #endif

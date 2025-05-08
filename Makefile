@@ -12,6 +12,7 @@ SRCS = \
     philo/src/parsing/utils.c \
     philo/src/main.c \
 	philo/src/init/init.c \
+	philo/src/debug.c \
 
 OBJS = $(SRCS:philo/%.c=$(OBJ_DIR)%.o)
 
