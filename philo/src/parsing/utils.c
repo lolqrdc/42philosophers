@@ -6,11 +6,13 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:35:08 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 14:30:13 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 16:07:57 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+/* @brief fonctions utilitaires pour faire fonctionner le programme. */
 
 int	ft_atoi(char *str)
 {

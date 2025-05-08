@@ -6,11 +6,13 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:35:23 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 14:34:35 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 16:08:01 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+/*@brief vérification des arguments proposé par l'utilisateur. */
 
 int valid_arg(char **av)
 {
