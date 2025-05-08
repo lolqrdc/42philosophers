@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:19 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 22:25:13 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 23:04:51 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void    *s_routine(void *arg)
     {
         if (check_philo_death(philo) || philo_ate(philo) == FAIL)
             break ;
-        ft_usleep(50);
+        ft_usleep(1);
     }
     return (NULL);
 }
@@ -65,7 +65,7 @@ int philo_ate(t_philo *philos)
 
     i = 0;
     done = 0;
-    if (philos[0].nb_philos == -1)
+    if (philos[0].nb_time_to_eat == -1)
         return (SUCCESS);
     while (i < philos[0].nb_philos)
     {

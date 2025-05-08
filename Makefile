@@ -25,12 +25,12 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@echo "Linking $(NAME)..."
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	@echo "Compilation terminée."
 
 $(OBJ_DIR)%.o: philo/%.c
 	@mkdir -p $(dir $@)
-	@echo "Compiling $<..."
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)
