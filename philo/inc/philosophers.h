@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:12:16 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 11:25:41 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 12:24:10 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 /* Mes defines */
 # define PHILO_MAX 200
 # define FAIL 1
-# define SUCCES 0
+# define SUCCESS 0
 
 /* Mes structures */
 typedef struct s_philo
@@ -62,15 +62,19 @@ typedef struct s_program
 int main (int argc, char **av);
 
 /* Parsing */
+int valid_arg(char **av);
 
 /* Initialisation */
 
 /* Gestion des threads */
+
 /* La routine des philosophers */
 
 /* La routine du monitor */
 
 /* Les fonctions utilitaires */
+int	ft_atoi(char *str);
+int	ft_is_digit(int n);
 
 
 #endif

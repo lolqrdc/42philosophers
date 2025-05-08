@@ -1,21 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 11:03:21 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 14:27:19 by lolq             ###   ########.fr       */
+/*   Created: 2025/05/08 14:22:52 by lolq              #+#    #+#             */
+/*   Updated: 2025/05/08 14:22:59 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main (int argc, char **av)
-{
-    if (argc != 5 && argc != 6)
-        return (printf("Please provide enough arguments.\n"), FAIL);
-    if (!valid_arg(av))
-        return (FAIL);
-}
