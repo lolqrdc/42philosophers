@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:03:21 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 18:23:24 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 22:24:51 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main (int argc, char **av)
         destroy_mutex(&program, forks);
         return (printf("Error while the Initialization of forks mutexes"), 1);
     }
-    init_philos(philos, &program, fork, av);
+    init_philos(philos, &program, forks, av);
     if (philos->nb_philos == 1)
         one_philo(philos);
     else
