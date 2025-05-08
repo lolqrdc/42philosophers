@@ -11,12 +11,14 @@ SRCS = \
     philo/src/main.c \
     philo/src/parsing/parser.c \
 	philo/src/init/init.c \
-	philo/src/run/threads.c \
+	philo/src/run/one_philo.c \
 	philo/src/run/philo_routine.c \
 	philo/src/run/spy_routine.c \
+	philo/src/run/threads.c \
 	philo/src/debug.c \
     philo/src/utils/for_arg.c \
 	philo/src/utils/gettime.c \
+	philo/src/utils/print.c \
 
 OBJS = $(SRCS:philo/%.c=$(OBJ_DIR)%.o)
 
