@@ -15,7 +15,6 @@ SRCS = \
 	philo/src/run/philo_routine.c \
 	philo/src/run/spy_routine.c \
 	philo/src/run/threads.c \
-	philo/src/debug.c \
     philo/src/utils/for_arg.c \
 	philo/src/utils/gettime.c \
 	philo/src/utils/print.c \

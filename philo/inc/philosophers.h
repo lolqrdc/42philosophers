@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:12:16 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 18:19:00 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 22:25:54 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,17 @@ int     create_thread(t_program *program, pthread_mutex_t *forks);
 void    destroy_mutex(t_program *program, pthread_mutex_t *forks);
 
 /* La routine des philosophers */
-void    p_routine(void *arg);
+void    *p_routine(void *arg);
 void    p_eating(t_philo *philo);
 void    p_sleeping(t_philo *philo);
 void    p_thinking(t_philo *philo);
-int     is_philo_dead(t_philo *philo);
+int     philo_deadflag(t_philo *philo);
 
-/* La routine du monitor */
+/* La routine du spy */
+void    *s_routine(void *arg);
+int     philo_is_dead(t_philo *philo, size_t time_to_die);
+int     check_philo_death(t_philo *philos);
+int     philo_ate(t_philo *philos);
 
 /* Les fonctions utilitaires */
 int	    ft_atoi(char *str);
