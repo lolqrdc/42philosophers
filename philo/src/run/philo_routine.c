@@ -6,23 +6,23 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:49:05 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 18:07:44 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 22:25:10 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-/* @brief La routine à suivre pour chaque philosophe, et va vérifier si un
-philosophe est mort. */
+/* @brief La routine à suivre pour chaque philosophe, et va vérifier si le 
+le deadflag est passé à 1. */
 
-void p_routine(void *arg)
+void *p_routine(void *arg)
 {
     t_philo *philo;
     
     philo = (t_philo *)arg;
     if (philo->id % 2 == 0)
         ft_usleep(1);
-    while (!is_philo_dead(philo))
+    while (!philo_deadflag(philo))
     {
         p_eating(philo);
         p_sleeping(philo);
@@ -70,7 +70,7 @@ void    p_thinking(t_philo *philo)
     print_message("is thinking", philo, philo->id);
 }
 
-int is_philo_dead(t_philo *philo)
+int philo_deadflag(t_philo *philo)
 {
     int dead;
 

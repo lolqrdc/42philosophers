@@ -6,7 +6,7 @@
 /*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 16:05:00 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 17:54:33 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/08 21:07:44 by lolq             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int     create_thread(t_program *program, pthread_mutex_t *forks)
     int         i;
 
     i = 0;
-    if (pthread_create(&spy, NULL, spy_routine, program->philos) != 0)
+    if (pthread_create(&spy, NULL, s_routine, program->philos) != 0)
         return (destroy_mutex(program, forks), FAIL);
     while (i < program->philos[0].nb_philos)
     {
