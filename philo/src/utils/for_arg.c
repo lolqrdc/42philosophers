@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   for_arg.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lolq <lolq@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: loribeir <loribeir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/08 11:35:08 by lolq              #+#    #+#             */
-/*   Updated: 2025/05/08 16:07:57 by lolq             ###   ########.fr       */
+/*   Updated: 2025/05/09 11:33:34 by loribeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	ft_atoi(char *str)
 	i = 0;
 	sig = 1;
 	res = 0;
-	 if (ft_is_digit(str[i]) != SUCCESS)
-	 	return (printf("please provide only numeric arguments\n"), FAIL);
+	if (ft_is_digit(str[i]) != SUCCESS)
+		return (-1);
 	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
